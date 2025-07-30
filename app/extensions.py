@@ -14,5 +14,3 @@ cors = CORS()
 cache = Cache(config={"CACHE_TYPE": "SimpleCache"})
 limiter = Limiter(key_func=get_remote_address)
 bcrypt = Bcrypt()
-
-revoked_tokens = set()

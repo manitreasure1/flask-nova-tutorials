@@ -13,7 +13,7 @@ from flask_jwt_extended import( create_access_token,
                                 get_jwt)
 
 
-auth_bp = NovaBlueprint("users", __name__, url_prefix="/auth")
+auth_bp = NovaBlueprint("auth", __name__, url_prefix="/auth")
 
 
 @auth_bp.route("/", summary="Register a new user",methods=["POST"], response_model=UserOut, tags=["Auth"])

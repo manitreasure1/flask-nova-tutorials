@@ -1,8 +1,10 @@
 import os
 from dotenv import load_dotenv
 from flask_nova import FlaskNova, status
-from .extensions import db, jwt, migrate, cors, cache, limiter, bcrypt, revoked_tokens
+from .extensions import db, jwt, migrate, cors, cache, limiter, bcrypt
 from app.auth.routes import auth_bp
+from app.users.routes import users
+from app.cache.routes import cache_router
 from config import Config
 from flask import make_response, jsonify
 from app.models.revoke import RevokedToken
@@ -22,9 +24,9 @@ def create_app():
     migrate.init_app(app, db)
     jwt.init_app(app)
     cors.init_app(app)
-    cache.init_app(app)
     limiter.init_app(app)
     bcrypt.init_app(app)
+    # cache.init_app(app)
 
     @jwt.token_in_blocklist_loader
     def check_if_token_revoked(jwt_header, jwt_payload):
@@ -57,6 +59,8 @@ def create_app():
         })
     
     app.register_blueprint(auth_bp)
+    app.register_blueprint(users)
+    app.register_blueprint(cache_router)
 
     return app
 

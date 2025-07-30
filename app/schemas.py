@@ -31,4 +31,11 @@ class LoginInput(BaseModel):
 class LoginOut(BaseModel):
     access_token: str
     refresh_token: str
-    ...
+    
+
+
+class UpdateProfile(BaseModel):
+    firstname: Optional[str] = None
+    lastname: Optional[str] = None
+    email: EmailStr| None = None
+    password: Optional[str] = None
