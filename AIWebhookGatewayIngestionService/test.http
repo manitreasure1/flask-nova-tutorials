@@ -1,0 +1,11 @@
+###
+
+POST  http://127.0.0.1:5000/ingest
+Content-Type: application/json
+X-Signature: 0d47123d2111b4d3154a4a97937ac3ee41723bcb99a16caf7b316e25e98b2d90
+
+{
+  "content": "The service was fast, but the UI is confusing.",
+  "event_type": "feedback.received",
+  "source": "customer_portal"
+}
