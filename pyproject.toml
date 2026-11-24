@@ -1,0 +1,18 @@
+[project]
+name = "flask-nova-tutorials"
+version = "0.2.0"
+description = "Example implementation of flask-nova"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "flask-bcrypt>=1.0.1",
+    "flask-caching>=2.5.1",
+    "flask-cors>=6.0.5",
+    "flask-jwt-extended>=4.7.4",
+    "flask-limiter>=4.1.1",
+    "flask-migrate>=4.1.0",
+    "flask-nova==0.2.1",
+    "flask-sqlalchemy>=3.1.1",
+    "pydantic[email]>=2.13.5",
+    "python-dotenv>=1.2.3",
+]
